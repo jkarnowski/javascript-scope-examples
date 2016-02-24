@@ -9,41 +9,41 @@ SAY = "declared above the DOM is ready...";
 // example 0.1
 // console.log(SAY);
 
-// 
+//
 $( document ).ready(function(){
   // example 1 - what do you expect to log to the console?
-  // console.log("1 - " + SAY); 
-  
-  // console.log(outsideDocReady);
+  console.log("1 - " + SAY);
+
+  console.log(outsideDocReady);
 
   // example 2  - What's the SCOPE?
-  // var favoriteWater = "water that comes from volcanic rivers";
-  // console.log("2 - " + favoriteWater);
+  var favoriteWater = "water that comes from volcanic rivers";
+  console.log("2 - " + favoriteWater);
 
   // ex 3: named function - What's the SCOPE of the variables? the function?
-  // console.log("EX 3:");
-  // greetingsFromCharacters("Jack Sparrow");
+  console.log("EX 3:");
+  greetingsFromCharacters("Jack Sparrow");
 
   // ex 4: anonymous function, not stored in a variable / What's its scope?
-  // 2 What variables are local? global? 
+  // 2 What variables are local? global?
   // console.log("EX 4:");
   // say("Brenda");
 
 // named function / What's the scope of the variable?
   // console.log("Ex 5 - let's inspect: girls")
-  // console.log(girls(name));
+  console.log(girls(name));
 
-// object literal / scope? 
+// object literal / scope?
   // console.log("Ex 6 - movies is an object literal")
-  // console.log(movies);
+  console.log(movies);
 
 // how to access attribute in an object
-  // console.log(movies.title);
+  console.log(movies.title);
 
-// object literal with a function / scope of the function? of the variables? 
-  // console.log(movies.say());
+// object literal with a function / scope of the function? of the variables?
+  console.log(movies.say());
 
-// object literal / scope of the attributes? 
+// object literal / scope of the attributes?
   // console.log("Ex 7 - let's inspect: newCharacter")
   // console.log(newCharacter);
   // console.log(newCharacter.name);
@@ -59,13 +59,13 @@ $( document ).ready(function(){
 
   // return the results of an inner function
   // saveName("wonderwoman");
-  
+
 })
 
 var outsideDocReady = "outside doc ready. Am I local or global?"
 
 // INSIDE A NAMED FUNCTION
-// scope: 
+// scope:
 var greetingsFromCharacters = function(captain) {
   console.log("Arr Arr, my name is " + captain);
   console.log("inside greetingsFromCharacters....outsideDocReady:" + outsideDocReady)
@@ -74,7 +74,7 @@ var greetingsFromCharacters = function(captain) {
 }
 
 // run AFTER showing "Jack Sparrow"
-// When does this function execute? 
+// When does this function execute?
 // greetingsFromCharacters("Pink");
 
 // // anonymous function, doesn't belong to a variable
@@ -132,7 +132,7 @@ var saveName = function (superhero) {
   }
   var capitalized = capitalizeName();
   console.log("is capitalized available?: ")
-  console.log(capitalized); 
+  console.log(capitalized);
 }
 
 // console.log(say);
