@@ -124,6 +124,7 @@ var addClosure = function () {
 
 
 
+// // Closure + Self invoking function to provide encapsulation
 
 var add = (addClosure)();
 
@@ -136,6 +137,23 @@ var addAnonymous = (function () {
 
 // addAnonymous();
 // addAnonymous();
+
+// // A different example of closure + immediately invoked function expression
+// how can we change WHEN the function is executed or called?
+
+var sayHola = (function(lastName){
+  var firstName = "Jaclyn";
+  var lastName = lastName;
+
+  function say() {
+    return ("Hello, " + firstName + " " + lastName);
+  }
+
+  return say();
+});
+
+var danke = (sayHola);
+// var hello = sayHola()();
 
 // // #### Fifth Stop ---
 (function(){
