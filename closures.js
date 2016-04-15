@@ -1,5 +1,5 @@
 // // retains state and scope after the function returns
-// // a closure is the local variables for a function — kept alive after the function has returned, or
+// // a closure is the local variables for a function — kept alive after the function has returned
 
 
 // // The Story of a Counter

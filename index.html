@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Title of the document</title>
+	<title>Advanced JS Lecture</title>
 	<link rel="stylesheet" href="main.css" />
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -15,20 +15,31 @@
 	<script type="text/javascript" src="closures.js"></script>
 </head>
 
-<body>
-	<div class="beautify">
-		<h1 class="big-header">JavaScript Scope:</h1>
-		<h3 class="headers"><em>inside and outside of functions</em></h3>
+<!-- Nav Bar -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container">
+		<div class="collapse navbar-collapse navbar-standalone">
+			<nav class="nav navbar-nav">
+				<li class="active"><a href="#closures">Closures in JavaScript</a></li>
+			</nav>
+		</div>
+	</div>
+</div>
 
-		<h3 class="headers">What does SCOPE mean?</h3>
+<body class="container" style="margin-top:100px">
+	<div class="beautify">
+		<h2 class="big-header">JavaScript  - Understanding Scope:</h2>
+		<h5 class="headers"><em>inside and outside of functions</em></h5>
+
+		<h4 class="headers">What does SCOPE mean?</h4>
 		<p>Do I have ACCESS to the variable / function? </p>
 		<p>When does the access to a variable / function end? What is its life span?</p>
 
-		<h3 class="headers">By the end of this lesson you should...</h3>
+		<h4 class="headers">By the end of this lesson you should...</h4>
 		<p>Deepen your understanding of scope of variables with JavaScript</p>
 		<p>Challenge: Construct various examples showing the complexity of global + local scope</p>
 
-		<h3 class="headers">How?</h3>
+		<h4 class="headers">How?</h4>
 		<ol>
 			<li>Where's the code: index.html + app.js</li>
 			<li>BEFORE we run the code: What do you expect to happen?</li>
@@ -36,7 +47,7 @@
 			<li>WHOA Review</li>
 		</ol>
 
-		<h2 class="headers">Things To Know</h2>
+		<h3 class="headers">Things To Know</h3>
 		<ul>
 			<li>GLOBAL: Declared outside of a function. It exists on the web page, available until the page is closed</li>
 			<li>LOCAL: Declared inside a function. It exists when the function starts, and is done when the function returns something, ie: ends</li>
@@ -59,18 +70,18 @@
 			<li>NAMED FUNCTION: What do you expect the scope of "Jack Sparrow" to be?</li>
 			<code>
 				var greetingsFromCharacters = function(captain) {...}
-		</code>
+			</code>
 			<li>How is name = "Girl Develop It" different than name = "Jaclyn Karnowski"?</li>
 			<code>function say(hello) {...}</code>
 		</ul>
 
 		<hr>
 
-		<h2 class="headers">Run The Code!</h2>
+		<h3 class="headers">Run The Code!</h3>
 
 		<hr>
 
-		<h2 class="headers">WHOA. What just happened?</h2>
+		<h3 class="headers">WHOA. What just happened?</h3>
 		<ul>
 			<li>What did you notice about the life span of one of the variables or function?</li>
 			<li>Which variable has the shortest life span / most minimal scope?</li>
@@ -80,6 +91,23 @@
 			<li>THIS. What does 'this' have to do with scope? What is this.name versus name?</li>
 		</ul>
 	</div>
-</body>
 
+	<hr>
+
+	<div>
+		<h2 class="headers" id="closures">PART 2: Advanced JS - Closures</h2>
+		<ul>
+			<li>Closures change the accessibility of private variables to 'free' variables</li>
+			<li>Closure is a function that has access to an outer (higher level scope) function</li>
+			<li>It's the ability to retain state and scope after the function returns</li>
+		</ul>
+	</div>
+
+	<div>
+		<h2 class="headers">Play Along!</h2>
+		<p>Grab your laptop. Open the console in the Chrome browser or use JS Fiddle. Code along!</p>
+	</div>
+
+	<hr>
+</body>
 </html>
