@@ -141,24 +141,68 @@ var addAnonymous = (function () {
 // // A different example of closure + immediately invoked function expression
 // how can we change WHEN the function is executed or called?
 
-var sayHola = (function(lastName){
-  var firstName = "Jaclyn";
+var sayHola = (function(firstName, lastName){
+  var firstName = firstName;
   var lastName = lastName;
 
-  function say() {
+  return function say() {
     return ("Hello, " + firstName + " " + lastName);
   }
+})("Jaclyn", "Karnowski");
 
-  return say();
-});
+// why might using immediately invoked function expressions be a horrible way to run this function?
 
+// how are these two ways of executing the function different? What does it affect?
 var danke = (sayHola);
-// var hello = sayHola()();
+var hello = sayHola();
 
 // // #### Fifth Stop ---
 (function(){
   console.log("EXAMPLE - 5...")
 })()
+
+
+
+
+
+// // closure for private variables + encapsulation
+
+function AddUp (){
+  var counter = 0;
+
+  this.addTwo = function(){
+    return counter += 2;
+  }
+}
+
+var sum = new AddUp()
+sum.addTwo();
+sum.addTwo();
+
+// // Sixth Stop ---
+(function(){
+  console.log("END OF EXAMPLE - 6...")}
+  )()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
