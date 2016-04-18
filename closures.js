@@ -102,9 +102,9 @@ var addClosure = function () {
     };
 };
 
-(function(){
-  console.log("Example 4 -- complete")
-})()
+// (function(){
+//   console.log("Example 4 -- complete")
+// })()
 
 
 
@@ -126,14 +126,18 @@ var addClosure = function () {
 
 // // Closure + Self invoking function to provide encapsulation
 
-var add = (addClosure)();
+// var add = (addClosure)();
 
-var addAnonymous = (function () {
-    var counter = 0;
-    return function (){
-      return counter += 1;
-    };
-})();
+// function doSomething(){
+//   var addAnonymous = function () {
+//       var counter = 0;
+//       return function (){
+//         return counter += 1;
+//       };
+//   }();
+//   return addAnonymous();
+// }
+
 
 // addAnonymous();
 // addAnonymous();
@@ -141,25 +145,25 @@ var addAnonymous = (function () {
 // // A different example of closure + immediately invoked function expression
 // how can we change WHEN the function is executed or called?
 
-var sayHola = (function(firstName, lastName){
-  var firstName = firstName;
-  var lastName = lastName;
+// var sayHola = (function(firstName, lastName){
+//   var firstName = firstName;
+//   var lastName = lastName;
 
-  return function say() {
-    return ("Hello, " + firstName + " " + lastName);
-  }
-})("Jaclyn", "Karnowski");
+//   return function say() {
+//     return ("Hello, " + firstName + " " + lastName);
+//   }
+// })('jaclyn', 'perez');
 
-// why might using immediately invoked function expressions be a horrible way to run this function?
+// // why might using immediately invoked function expressions be a horrible way to run this function?
 
-// how are these two ways of executing the function different? What does it affect?
-var danke = (sayHola);
-var hello = sayHola();
+// // how are these two ways of executing the function different? What does it affect?
+// var danke = (sayHola);
+// var hello = sayHola();
 
-// // #### Fifth Stop ---
-(function(){
-  console.log("EXAMPLE - 5...")
-})()
+// // // #### Fifth Stop ---
+// (function(){
+//   console.log("EXAMPLE - 5...")
+// })()
 
 
 
@@ -167,22 +171,62 @@ var hello = sayHola();
 
 // // closure for private variables + encapsulation
 
-function AddUp (){
+function addUp (){
   var counter = 0;
 
-  this.addTwo = function(){
-    return counter += 2;
+  var resultsObject  = {
+    addTwo: function(){
+      return counter += 2;
+    }
   }
+  return resultsObject;
 }
 
-var sum = new AddUp()
-sum.addTwo();
-sum.addTwo();
+// var sum = new AddUp()
+// sum.addTwo();
+// sum.addTwo();
 
-// // Sixth Stop ---
-(function(){
-  console.log("END OF EXAMPLE - 6...")}
-  )()
+// // can you execute this function without setting up an object?
+
+// // // Sixth Stop ---
+// (function(){
+//   console.log("END OF EXAMPLE - 6...")}
+//   )()
+
+
+
+
+
+
+
+
+
+
+
+
+// miniQuery Release 0
+// var SweetSelector = (function(){
+
+//   this.select = function(htmlElement){
+//     console.log(htmlElement)
+
+//     if (htmlElement.includes('#')) {
+//         return document.getElementById(htmlElement.substring(1))
+//     }
+//     else if (htmlElement.includes('.')) {
+//       return document.getElementsByClassName(htmlElement.substring(1));
+//     }
+//     else {
+//       return ("can't find that element")
+//     }
+//   }
+
+//   return {
+//     select: select
+//   }
+
+// })();
+
 
 
 
