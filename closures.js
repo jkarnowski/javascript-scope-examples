@@ -4,23 +4,24 @@
 
 // // The Story of a Counter
 
-// var counter = 0;
+counter = 0;
 
-// // simplest example of a closure
-// function globalAdding(){
-//   console.log("adding with counter:" + counter)
-//   return counter += 1;
-// }
+// simplest example of a closure
+function globalAdding(){
+  console.log("adding with counter:" + counter)
+  return counter += 1;
+}
 
 // why do we have access to counter?
+// why might this be too much scope?
 
-// --- First Immediately Invoked Function Expression <3
-// (function(){
-//   console.log("EXAMPLE 1 -- complete")
-// })()
-
-// execute
 // globalAdding()
+// --- First Immediately Invoked Function Expression <3
+(function(){
+  console.log("EXAMPLE 1 -- complete")
+})()
+
+// // execute
 
 
 
@@ -71,7 +72,7 @@
 //   return counter;
 // }
 
-// // Third Stop ---
+// // // Third Stop ---
 // (function(){
 //   console.log("EXAMPLE 3 -- complete...")
 // })()
@@ -95,12 +96,17 @@
 
 
 
-var addClosure = function () {
-    var counter = 0;
-    return function (){
-      return counter += 1;
-    };
-};
+// var addClosure = function () {
+//     var counter = 0;
+//     return function (){
+//       return counter += 1;
+//       // console.log(counter += 1);
+//     };
+// }();
+
+// var mike = addClosure();
+
+// // next: make this into an IFFE
 
 // (function(){
 //   console.log("Example 4 -- complete")
@@ -125,19 +131,30 @@ var addClosure = function () {
 
 
 // // Closure + Self invoking function to provide encapsulation
+  // var addAnonymous = function () {
+  //   var counter = 0;
+  //     return function (){
+  //       return counter += 1;
+  //     };
+  //     // return addAnonymous();
+  // }();
 
-// var add = (addClosure)();
+// var anon = addAnonymous();
+// anon()
 
+// WHAT WILL HAPPEN HERE???
 // function doSomething(){
+
 //   var addAnonymous = function () {
-//       var counter = 0;
+//     var counter = 0;
 //       return function (){
 //         return counter += 1;
 //       };
 //   }();
 //   return addAnonymous();
-// }
+// };
 
+// doSomething()
 
 // addAnonymous();
 // addAnonymous();
@@ -152,15 +169,15 @@ var addClosure = function () {
 //   return function say() {
 //     return ("Hello, " + firstName + " " + lastName);
 //   }
-// })('jaclyn', 'perez');
+// })('jac', 'perez');
 
-// // why might using immediately invoked function expressions be a horrible way to run this function?
+// // // // why might using immediately invoked function expressions be a horrible way to run this function?
 
-// // how are these two ways of executing the function different? What does it affect?
+// // // // how are these two ways of executing the function different? What does it affect?
 // var danke = (sayHola);
 // var hello = sayHola();
 
-// // // #### Fifth Stop ---
+// // // // #### Fifth Stop ---
 // (function(){
 //   console.log("EXAMPLE - 5...")
 // })()
@@ -171,7 +188,7 @@ var addClosure = function () {
 
 // // closure for private variables + encapsulation
 
-function addUp (){
+function AddUp (){
   var counter = 0;
 
   var resultsObject  = {
@@ -182,16 +199,16 @@ function addUp (){
   return resultsObject;
 }
 
-// var sum = new AddUp()
+var sum = new AddUp()
 // sum.addTwo();
-// sum.addTwo();
+// // sum.addTwo();
 
-// // can you execute this function without setting up an object?
+// // // can you execute this function without setting up an object?
 
-// // // Sixth Stop ---
+// // // // Sixth Stop ---
 // (function(){
-//   console.log("END OF EXAMPLE - 6...")}
-//   )()
+//   console.log("END OF EXAMPLE - 6...")
+// })();
 
 
 
