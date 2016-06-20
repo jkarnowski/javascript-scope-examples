@@ -17,8 +17,12 @@ var createTodoList = function() {
   	return this.items;
   }
 
-  todoList.indexOf = function(item){
-  	return this.items.indexOf(item);
+  todoList.findIndex = function(item){
+    for(var i=0; i<=this.items.length; i++){
+      if (this.items[i].description == item){
+        return i;
+      }
+    }
   }
 
   todoList.remove = function(index){
@@ -26,7 +30,7 @@ var createTodoList = function() {
   }
 
   todoList.get = function(index){
-  	return this.items.data;
+  	return this.items[index];
   }
 
   todoList.complete = function(index){
@@ -53,7 +57,7 @@ groceryList.add('bread');
 groceryList.add('cheese');
 groceryList.add('milk');
 groceryList.list(); //-> ['bread', 'cheese', 'milk']
-groceryList.indexOf('cheese'); //-> 1
+groceryList.findIndex('cheese'); //-> 1
 groceryList.remove(1);
 groceryList.list(); //-> ['bread', 'milk']
 
@@ -63,20 +67,20 @@ groceryList.add('bread');
 groceryList.add('cheese');
 groceryList.add('milk');
 groceryList.list(); //-> [
-// {description: 'bread', completed: false}, 
-// {description: 'cheese', completed: false}, 
-// {description: 'milk', completed: false}, 
+// {description: 'bread', completed: false},
+// {description: 'cheese', completed: false},
+// {description: 'milk', completed: false},
 // ];
-groceryList.indexOf('cheese'); //-> 1
+groceryList.findIndex('cheese'); //-> 1
 groceryList.get(1); //-> {description: 'cheese', completed: false}
 groceryList.complete(1);
 groceryList.list(); //-> [
-// {description: 'bread', completed: false}, 
-// {description: 'cheese', completed: true}, 
-// {description: 'milk', completed: false}, 
+// {description: 'bread', completed: false},
+// {description: 'cheese', completed: true},
+// {description: 'milk', completed: false},
 // ];
 groceryList.remove(1);
 groceryList.list(); //-> [
-// {description: 'bread', completed: false}, 
-// {description: 'milk', completed: false}, 
+// {description: 'bread', completed: false},
+// {description: 'milk', completed: false},
 // ];
