@@ -3,10 +3,12 @@ var createTodoList = function() {
   var todoList = {
     myList: [],
     add: function(item){
-      this.myList.push(item);
+      this.myList.push({description: item, completed: false});
     },
     list: function(){
-      return this.myList;
+      for(i in this.myList){
+        console.log("description:", this.myList[i].description, "completed", this.myList[i].completed);
+      }
     },
     findIndex: function(item){
       for(var i=0; i<=this.myList.length; i++){
@@ -14,6 +16,16 @@ var createTodoList = function() {
           return i
         }
       }
+    },
+    get: function(index){
+      return this.myList[index];
+    },
+    remove: function(index){
+      return this.myList.splice(index, 1)[0]
+    },
+    complete: function(index){
+      this.myList[index].completed = true;
+      return this.myList[index]
     }
   };
 

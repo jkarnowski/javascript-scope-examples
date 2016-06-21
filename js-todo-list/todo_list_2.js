@@ -27,18 +27,31 @@ var makeTodoList = function(){
   // allows you to keep the object light and skinny but add complexity when the object
   // needs to use its superpowers (aka: functions)
 
-// var TodoList = function(){
-//   this.list = [];
-// }
+// my new constructor function with one property: the list
+var TodoList = function(){
+  this.list = [];
+}
 
-// TodoList.prototype.addItem = function(item) {
-//   this.list.push(item);
-// };
+// prototyping allows you to delegate behaviors (functions)
+// to an instance of that constructor function
+TodoList.prototype.addItem = function(item) {
+  this.list.push({description: item, completed: false});
+};
 
-// TodoList.prototype.printList = function() {
-//   console.log(this.list);
-// };
+TodoList.prototype.printList = function() {
+  for (i in this.list){
+    console.log(this.list[i])
+  }
+};
 
-// TodoList.prototype.indexOfItem = function(item) {
-//   console.log(this.list.indexOf(item));
-// };
+TodoList.prototype.indexOfItem = function(item) {
+  console.log(this.list.indexOf(item));
+};
+
+TodoList.prototype.get = function(index) {
+  return this.list[index]
+};
+
+TodoList.prototype.remove = function(index) {
+  return this.list.splice(index, 1)[0]
+};
