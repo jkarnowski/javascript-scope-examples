@@ -1,47 +1,21 @@
 var createTodoList = function() {
-  var todoList = {};
 
-  // your code here
-  // returns an object with todo list functionality
-  todoList.items = [];
-
-  // push an item object into the items array of THIS object
-  todoList.add = function(item) {
-  	this.items.push({
-  		description: item,
-  		completed: false
-  	})
-  }
-
-  todoList.list = function(){
-  	return this.items;
-  }
-
-  todoList.findIndex = function(item){
-    for(var i=0; i<=this.items.length; i++){
-      if (this.items[i].description == item){
-        return i;
+  var todoList = {
+    myList: [],
+    add: function(item){
+      this.myList.push(item);
+    },
+    list: function(){
+      return this.myList;
+    },
+    findIndex: function(item){
+      for(var i=0; i<=this.myList.length; i++){
+        if (item == this.myList[i]){
+          return i
+        }
       }
     }
-  }
-
-  todoList.remove = function(index){
-  	this.items.splice(index, 1);
-  }
-
-  todoList.get = function(index){
-  	return this.items[index];
-  }
-
-  todoList.complete = function(index){
-  	// this.items.data.completed = true;
-  	for (var i in this.items){
-  		if (this.items.indexOf(index) === index){
-  			this.items.data.completed = true;
-  			break; //stops the loop
-  		}
-  	}
-  }
+  };
 
   return todoList;
 };
