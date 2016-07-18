@@ -1,43 +1,33 @@
 var createTodoList = function() {
-  var todoList = {};
 
-  // your code here
-  // returns an object with todo list functionality
-  todoList.items = [];
-
-  // push an item object into the items array of THIS object
-  todoList.add = function(item) {
-  	this.items.push({
-  		description: item,
-  		completed: false
-  	})
-  }
-
-  todoList.list = function(){
-  	return this.items;
-  }
-
-  todoList.indexOf = function(item){
-  	return this.items.indexOf(item);
-  }
-
-  todoList.remove = function(index){
-  	this.items.splice(index, 1);
-  }
-
-  todoList.get = function(index){
-  	return this.items.data;
-  }
-
-  todoList.complete = function(index){
-  	// this.items.data.completed = true;
-  	for (var i in this.items){
-  		if (this.items.indexOf(index) === index){
-  			this.items.data.completed = true;
-  			break; //stops the loop
-  		}
-  	}
-  }
+  var todoList = {
+    myList: [],
+    add: function(item){
+      this.myList.push({description: item, completed: false});
+    },
+    list: function(){
+      for(i in this.myList){
+        console.log("description:", this.myList[i].description, "completed", this.myList[i].completed);
+      }
+    },
+    findIndex: function(item){
+      for(var i=0; i<=this.myList.length; i++){
+        if (item == this.myList[i]){
+          return i
+        }
+      }
+    },
+    get: function(index){
+      return this.myList[index];
+    },
+    remove: function(index){
+      return this.myList.splice(index, 1)[0]
+    },
+    complete: function(index){
+      this.myList[index].completed = true;
+      return this.myList[index]
+    }
+  };
 
   return todoList;
 };
@@ -53,7 +43,7 @@ groceryList.add('bread');
 groceryList.add('cheese');
 groceryList.add('milk');
 groceryList.list(); //-> ['bread', 'cheese', 'milk']
-groceryList.indexOf('cheese'); //-> 1
+groceryList.findIndex('cheese'); //-> 1
 groceryList.remove(1);
 groceryList.list(); //-> ['bread', 'milk']
 
@@ -63,20 +53,20 @@ groceryList.add('bread');
 groceryList.add('cheese');
 groceryList.add('milk');
 groceryList.list(); //-> [
-// {description: 'bread', completed: false}, 
-// {description: 'cheese', completed: false}, 
-// {description: 'milk', completed: false}, 
+// {description: 'bread', completed: false},
+// {description: 'cheese', completed: false},
+// {description: 'milk', completed: false},
 // ];
-groceryList.indexOf('cheese'); //-> 1
+groceryList.findIndex('cheese'); //-> 1
 groceryList.get(1); //-> {description: 'cheese', completed: false}
 groceryList.complete(1);
 groceryList.list(); //-> [
-// {description: 'bread', completed: false}, 
-// {description: 'cheese', completed: true}, 
-// {description: 'milk', completed: false}, 
+// {description: 'bread', completed: false},
+// {description: 'cheese', completed: true},
+// {description: 'milk', completed: false},
 // ];
 groceryList.remove(1);
 groceryList.list(); //-> [
-// {description: 'bread', completed: false}, 
-// {description: 'milk', completed: false}, 
+// {description: 'bread', completed: false},
+// {description: 'milk', completed: false},
 // ];
