@@ -101,7 +101,7 @@
 //     return function (){
 //       return counter += 1;
 //     };
-// }();
+// };
 
 // var k = addClosure
 
@@ -130,17 +130,17 @@
 
 
 // // Closure + Self invoking function to provide encapsulation
-//   var addAnonymous = function () {
-//     var counter = 0;
-//       return function (){
-//         return counter += 1;
-//       };
-//   }();
+  // var addAnonymous = function () {
+  //   var counter = 0;
+  //     return function (){
+  //       return counter += 1;
+  //     };
+  // }();
 
 // var anon = addAnonymous();
 
 // WHAT WILL HAPPEN HERE???
-// var test = (function doSomething(){
+// var addAnonymous = (function doSomething(){
 
 //   return function () {
 //     var counter = 0;
@@ -148,7 +148,6 @@
 //         return counter += 1;
 //       };
 //   }();
-//   // return addAnonymous();
 // })();
 
 
@@ -158,14 +157,14 @@
 // // A different example of closure + immediately invoked function expression
 // how can we change WHEN the function is executed or called?
 
-// var sayHola = (function(firstName, lastName){
-//   // var firstName = firstName;
-//   // var lastName = lastName;
+var sayHola = (function(firstName, lastName){
+  var firstName = firstName;
+  var lastName = lastName;
 
-//   return function say() {
-//     return ("Hello, " + firstName + " " + lastName);
-//   }
-// })('jaclyn', 'perez');
+  return function say() {
+    return ("Hello, " + firstName + " " + lastName);
+  }
+})();
 
 // // // // // why might using immediately invoked function expressions be a horrible way to run this function?
 
@@ -184,7 +183,7 @@
 
 // // closure for private variables + encapsulation
 
-function AddUp (){
+var thing = function AddUp (){
   var counter = 0;
 
   var resultsObject  = {
@@ -193,9 +192,9 @@ function AddUp (){
     }
   }
   return resultsObject;
-}
+}()
 
-var sum = new AddUp()
+// var sum = new AddUp()
 // sum.addTwo();
 // // sum.addTwo();
 
@@ -218,29 +217,29 @@ var sum = new AddUp()
 
 
 // miniQuery Release 0
-var SweetSelector = (function(){
+// var SweetSelector = (function(){
 
-  this.bananaSelect = function(htmlElement){
-    var type = htmlElement.substring(0,1);
-    var name = htmlElement.substring(1);
-    if (type == '#') {
-        return document.getElementById(name)
-    }
-    else if (type == '.') {
-      return document.getElementsByClassName(name);
-    }
-    else if {
-      return document.getElementsByTagName(htmlElement);
-    }
-    else {
-      throw ("This input doesn't work" + htmlElement);
-    }
-  }
+//   this.bananaSelect = function(htmlElement){
+//     var type = htmlElement.substring(0,1);
+//     var name = htmlElement.substring(1);
+//     if (type == '#') {
+//         return document.getElementById(name)
+//     }
+//     else if (type == '.') {
+//       return document.getElementsByClassName(name);
+//     }
+//     else if {
+//       return document.getElementsByTagName(htmlElement);
+//     }
+//     else {
+//       throw ("This input doesn't work" + htmlElement);
+//     }
+//   }
 
-  return {
-    select: bananaSelect
-  }
-})(); //end of SweetSelector
+//   return {
+//     select: bananaSelect
+//   }
+// })(); //end of SweetSelector
 
 
 
