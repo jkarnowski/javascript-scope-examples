@@ -4,22 +4,22 @@
 
 // // The Story of a Counter
 
-counter = 0;
+// counter = 0;
 
-// simplest example of a closure
-function globalAdding(){
-  console.log("adding with counter:" + counter)
-  return counter += 1;
-}
+// // simplest example of a closure
+// function globalAdding(){
+//   console.log("adding with counter:" + counter)
+//   return counter += 1;
+// }
 
 // why do we have access to counter?
 // why might this be too much scope?
 
 // globalAdding()
 // --- First Immediately Invoked Function Expression <3
-(function(){
-  console.log("EXAMPLE 1 -- complete")
-})()
+// (function(){
+//   console.log("EXAMPLE 1 -- complete")
+// })()
 
 // // execute
 
@@ -100,11 +100,10 @@ function globalAdding(){
 //     var counter = 0;
 //     return function (){
 //       return counter += 1;
-//       // console.log(counter += 1);
 //     };
 // }();
 
-// var mike = addClosure();
+// var k = addClosure
 
 // // next: make this into an IFFE
 
@@ -131,30 +130,27 @@ function globalAdding(){
 
 
 // // Closure + Self invoking function to provide encapsulation
-  // var addAnonymous = function () {
-  //   var counter = 0;
-  //     return function (){
-  //       return counter += 1;
-  //     };
-  //     // return addAnonymous();
-  // }();
-
-// var anon = addAnonymous();
-// anon()
-
-// WHAT WILL HAPPEN HERE???
-// function doSomething(){
-
 //   var addAnonymous = function () {
 //     var counter = 0;
 //       return function (){
 //         return counter += 1;
 //       };
 //   }();
-//   return addAnonymous();
-// };
 
-// doSomething()
+// var anon = addAnonymous();
+
+// WHAT WILL HAPPEN HERE???
+// var test = (function doSomething(){
+
+//   return function () {
+//     var counter = 0;
+//       return function (){
+//         return counter += 1;
+//       };
+//   }();
+//   // return addAnonymous();
+// })();
+
 
 // addAnonymous();
 // addAnonymous();
@@ -163,18 +159,18 @@ function globalAdding(){
 // how can we change WHEN the function is executed or called?
 
 // var sayHola = (function(firstName, lastName){
-//   var firstName = firstName;
-//   var lastName = lastName;
+//   // var firstName = firstName;
+//   // var lastName = lastName;
 
 //   return function say() {
 //     return ("Hello, " + firstName + " " + lastName);
 //   }
-// })('jac', 'perez');
+// })('jaclyn', 'perez');
 
-// // // // why might using immediately invoked function expressions be a horrible way to run this function?
+// // // // // why might using immediately invoked function expressions be a horrible way to run this function?
 
-// // // // how are these two ways of executing the function different? What does it affect?
-// var danke = (sayHola);
+// // // // // how are these two ways of executing the function different? What does it affect?
+// var danke = sayHola;
 // var hello = sayHola();
 
 // // // // #### Fifth Stop ---
@@ -222,28 +218,29 @@ var sum = new AddUp()
 
 
 // miniQuery Release 0
-// var SweetSelector = (function(){
+var SweetSelector = (function(){
 
-//   this.select = function(htmlElement){
-//     console.log(htmlElement)
+  this.bananaSelect = function(htmlElement){
+    var type = htmlElement.substring(0,1);
+    var name = htmlElement.substring(1);
+    if (type == '#') {
+        return document.getElementById(name)
+    }
+    else if (type == '.') {
+      return document.getElementsByClassName(name);
+    }
+    else if {
+      return document.getElementsByTagName(htmlElement);
+    }
+    else {
+      throw ("This input doesn't work" + htmlElement);
+    }
+  }
 
-//     if (htmlElement.includes('#')) {
-//         return document.getElementById(htmlElement.substring(1))
-//     }
-//     else if (htmlElement.includes('.')) {
-//       return document.getElementsByClassName(htmlElement.substring(1));
-//     }
-//     else {
-//       return ("can't find that element")
-//     }
-//   }
-
-//   return {
-//     select: select
-//   }
-
-// })();
-
+  return {
+    select: bananaSelect
+  }
+})(); //end of SweetSelector
 
 
 

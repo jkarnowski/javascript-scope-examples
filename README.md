@@ -5,7 +5,7 @@ These JavaScript variable and function scoping examples were generated for my te
 The purpose of the examples is to develop and deepen a beginner's understanding of scope with variables and functions.
 
 ## Index.html
-###Check out: 
+###Check out:
 
 - Objectives you can expect to learn
 - Read the instructions of How To...
@@ -23,3 +23,10 @@ The purpose of the examples is to develop and deepen a beginner's understanding 
 5. Move through each example, one by one by uncommenting any relevant javascript and console.log statements
 
 I hope you can learn something new through these examples!
+
+
+## QUESTIONS
+- Promises?
+- different structures for modules
+- namespacing
+
